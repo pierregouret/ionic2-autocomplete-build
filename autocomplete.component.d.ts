@@ -20,11 +20,11 @@ export declare class AutoCompleteComponent implements ControlValueAccessor {
     inputElem: any;
     private onTouchedCallback;
     private onChangeCallback;
+    defaultOpts: any;
     suggestions: any[];
     formValue: any;
     showList: boolean;
     private _showList;
-    private defaultOpts;
     private selection;
     private showListChanged;
     /**
@@ -35,7 +35,7 @@ export declare class AutoCompleteComponent implements ControlValueAccessor {
      * handle tap
      * @param event
      */
-    private handleTap(event);
+    handleTap(event: any): void;
     writeValue(value: any): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -44,7 +44,7 @@ export declare class AutoCompleteComponent implements ControlValueAccessor {
     /**
      * get items for auto-complete
      */
-    getItems(): void;
+    getItems(e?: Event): void;
     /**
      * show item list
      */
