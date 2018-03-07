@@ -178,6 +178,7 @@ var AutoCompleteComponent = (function () {
      * @return {?}
      */
     AutoCompleteComponent.prototype.select = function (selection) {
+        var _this = this;
         this.keyword = this.getLabel(selection);
         this.formValue = this.getFormValue(selection);
         this.hideItemList();
@@ -186,9 +187,11 @@ var AutoCompleteComponent = (function () {
         if (this.hideListOnSelection) {
             this.hideItemList();
         }
-        // emit selection event
-        this.itemSelected.emit(selection);
-        this.selection = selection;
+        setTimeout(function () {
+            // emit selection event
+            _this.itemSelected.emit(selection);
+            _this.selection = selection;
+        }, 100);
     };
     /**
      * get current selection
